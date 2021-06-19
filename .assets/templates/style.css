@@ -22,7 +22,9 @@ body {
 }
 
 article > p {
-    line-height: 135%;
+    line-height: 1.5em;
+    padding: 10px 0px;
+    font-size: 1.1em;
 }
 article > h1 {
     padding-top: 3em;
