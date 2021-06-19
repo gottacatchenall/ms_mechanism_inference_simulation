@@ -55,6 +55,7 @@ pre {
     white-space: pre-wrap;
 }
 h1, h2, h3 {
+    margin: 10px auto;
     color: var(--structure);
     font-family: "Roboto", sans-serif;
     font-weight: 600;
@@ -153,4 +154,8 @@ h3 {
 }
 h4 {
     font-size: 1.5em;
+}
+
+article p{
+    max-width: 700px;
 }
