@@ -25,6 +25,7 @@ article > p {
     line-height: 1.5em;
     padding: 10px 0px;
     font-size: 1.1em;
+    margin: 0px auto;
 }
 article > h1 {
     padding-top: 3em;
@@ -42,7 +43,6 @@ a:hover {
 }
 .container {
     margin: 0em auto;
-    max-width: var(--width);
     padding: var(--inner-space);
 }
 header > .container {
@@ -88,10 +88,10 @@ footer {
     margin-bottom: 5em;
 }
 figure {
-    max-width: 100%;
+    max-width: 1200px;
     border: 1px solid var(--pale);
     border-radius: 2px;
-    margin: 1em 0.5em;
+    margin: 30px auto;
 }
 figure > img {
     max-width: 100%;

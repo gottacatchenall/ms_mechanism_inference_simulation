@@ -14,14 +14,13 @@ of life on Earth.
 How can we understand the processes and mechanisms that produce Earth ecosystems
 when their composition is driven by so many factors?
 
-Understanding how human activity is changing Earth's ecosystems,
-and how to best predict the ways ecosystems will change in the future,
-remains a fundamental goal of ecology.
-Still, predicting how ecosystems will change over time remains difficult.
-There is variation in the what scales are best for prediction
-[@SDMPredictibility], and some forms of dynamics are intrinsically complex
-enough to avoid effective prediction at all [@Pennekamp2019IntPre;
-@Beckage2011LimPre; @Chen2019RevCom].
+Understanding how human activity is changing Earth's ecosystems, and how to best
+predict the ways ecosystems will change in the future, remains a fundamental
+goal of ecology. Still, predicting how ecosystems will change over time remains
+difficult. There is variation in the what scales are best for prediction
+[@Brodie2021ExpTim], and some forms of dynamics are intrinsically complex enough
+to avoid effective prediction at all [@Pennekamp2019IntPre; @Beckage2011LimPre;
+@Chen2019RevCom].
 
 How does one decide the best spatial, temporal, and organization scale at
 which to model a processes such to best predict that process in the future?
@@ -30,6 +29,7 @@ given spatial/temporal/organizational scale. This results in the question: what
 are the mechanisms best describe a set of data? Different levels of abstraction
 have proven successful in predicting how biological systems change over time.
 
+ScientificML [@Rackauckas2020UniDif].
 
 How do we predict how ecosystems will change at the scale of community ecology?
 The mechanisms that influence the dynamics of communities are multifaceted.
@@ -48,36 +48,37 @@ evolutionary processes, which form the species pool?
 ![TODO: Slices of Metacommunities. Concept space.](./figures/tensorslices.png){#fig:slices}
 
 
-Ecology is as much a study of emergent properties across scales as it is
-anything to do with biology. The data we collect from these systems is
-inherently noisy. This data contains information produced by a combination of
-"true" mechanisms (interacting in unknown ways) combined with noise.
+The data we collect from these systems is inherently noisy. This data contains
+information produced by a combination of "true" mechanisms (interacting in
+unknown ways) combined with noise. We first need to ask if we can understand the
+mechanisms producing these phenomena, which we argue is synonymous with
+prediction.
 
-We first need to ask if we can understand the mechanisms producing these phenomena,
-which we argue is synonymous with prediction.
+
 
 The second question then becomes can we forecast/manage these systems?
 Example of success in climate/weather forecasting.
 
-# A dynamical systems perspective on metacommunity processes
-
+# A dynamical systems perspective on ecological mechanisms
 
 ***What is an ecological mechanism?***
-A mapping between low dimensional
-latent/parameter space and information space. Why is simulation necessary in
-ecology? They allow us to produce data that encodes explicit mechanism
-[@Crutchfield1992SemThe].
+A mapping between low dimensional latent/parameter space and information space.
+Why is simulation necessary in ecology? They allow us to produce data that
+encodes explicit mechanism [@Crutchfield1992SemThe].
+Dynamical systems is the subfield of mathematics relating to understanding how
+systems change over time. often by applying a geometric perspective to
+state-space.
 
-Dynamical systems is the subfield of mathematics relating to understanding how systems change over time.
-often by applying a geometric perspective to state-space.
 
+***Metacommunity states and mechanisms***
 Within this abstraction, a metacommunity state is a set of measurements for
 species across locations at a single point in time, which can be represented as
-a matrix: a grid of measurements where each row corresponds to location and each column
-to species.
+a matrix: a grid of measurements where each row corresponds to location and each
+column to species.
 
-Across timepoints, these states can be combined to formed trajectories
-which can be represented as tensors
+***Metacommunity dynamics and tensors***
+Across timepoints, a set of states form trajectories which can
+be represented as a a tensor.
 
 ![A mechanism is a flow on the state space.](./figures/flows.png){#fig:flow}
 
@@ -85,12 +86,18 @@ which can be represented as tensors
 
 # Using simulation to infer mechanisms in ecology
 
+![Likelihood free inference for metacommunity ecology ](./figures/likelihoodfreeinference.png){#fig:information}
+
+
+# Conclusion
+
+
+
 Science is fundamentally a theory of epistemology: a methodology and set of
 principles to make justified claims about the world. Descriptive claims about
 the world (the Earth goes around the sun, more species are found near the
 equator than far from it) are considered justified if they make predictions that
-agree with observed reality.
-In order to determine if a descriptive claim agrees
+agree with observed reality. In order to determine if a descriptive claim agrees
 with reality, it must be translated into a quantitative model that makes
 predictions about things that can be measured. These quantitative models take
 many forms. A subclass of these models, mechanistic models, represent latent
@@ -103,11 +110,11 @@ nature works that we can almost call it real.
 >
 > Richard P. Feynman
 
-If one abandons the notion that a model represents some "truth" about the
-world, against predictive accuracy. The problem is you cannot tell the
-difference ---Huame and the induction problem.
+It is useful the notion that a model represents some "truth" about the world,
+instead models have vary in their usefulness. predictive accuracy is  one
+measure of this usefulness. The problem is you cannot tell the difference
+---Hume and the induction problem.
 
-![Likelihood free inference for metacommunity ecology ](./figures/likelihoodfreeinference.png){#fig:information}
 
 
 
@@ -118,13 +125,11 @@ of predictive accuracy. Mechanisms that are incorrect that produce information
 that shares statistical properties with empirical data can still be useful.
 
 
-
 ***What are the limitations of the utility of mechanistic simulations***
 There are limits to the scope of simulation models. How do we know when they
 are appropriate, versus a ML/non-mechanistic model?
 
-
-***Need for flexible set of tools to do this*** setting up the next chapter
+Need for flexible set of tools to do this, setting up the next chapter.
 
 
 
