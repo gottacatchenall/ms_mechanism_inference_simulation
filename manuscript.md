@@ -5,16 +5,24 @@ bibliography: [references.bib]
 
 # Introduction
 
-Ecosystems are quintessentially complex [@Levin1992ProPat]---they are
-the emergent result of biological processes each of which exist on
-a particular spatial, temporal, and organizational scale.
-These processes influence and compound on one another to
-produce the emergent diversity of functions and forms of life on Earth.
+Ecosystems are quintessentially complex [@Levin1992ProPat]---they are the
+emergent result of biological processes that exist across spatial, temporal, and
+organizational scales. These processes enable, influence and
+compound on one another, resulting in the diversity of functions and forms
+of life on Earth.
+
+How can we understand the processes and mechanisms that produce Earth ecosystems
+when their composition is driven by so many factors?
+
 Understanding how human activity is changing Earth's ecosystems,
 and how to best predict the ways ecosystems will change in the future,
 remains a fundamental goal of ecology.
-
 Still, predicting how ecosystems will change over time remains difficult.
+There is variation in the what scales are best for prediction
+[@SDMPredictibility], and some forms of dynamics are intrinsically complex
+enough to avoid effective prediction at all [@Pennekamp2019IntPre;
+@Beckage2011LimPre; @Chen2019RevCom].
+
 How does one decide the best spatial, temporal, and organization scale at
 which to model a processes such to best predict that process in the future?
 There are innumerably many biological mechanisms that have been posited at any
@@ -22,10 +30,6 @@ given spatial/temporal/organizational scale. This results in the question: what
 are the mechanisms best describe a set of data? Different levels of abstraction
 have proven successful in predicting how biological systems change over time.
 
-There is variation in the what scales are best for prediction
-[@SDMPredictibility], and some forms of dynamics are intrinsically complex
-enough to avoid effective prediction at all [@Pennekamp2019IntPre; @Beckage2011LimPre;
-@Chen2019RevCom].
 
 How do we predict how ecosystems will change at the scale of community ecology?
 The mechanisms that influence the dynamics of communities are multifaceted.
