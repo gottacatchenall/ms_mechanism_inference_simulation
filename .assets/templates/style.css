@@ -111,6 +111,17 @@ blockquote {
     font-size: 1.2em;
     max-width: 500px;
 }
+#refs {
+    font-size: 90%;
+    column-count: 2;
+    max-width: 700px;
+    margin: 0px auto;
+}
+#refs > .csl-entry {
+    padding-bottom: 0.2em;
+    padding-top: 0.4em;
+    max-width: 500px;
+}
 
 
 img {
@@ -147,14 +158,8 @@ tbody > tr:nth-child(even) {background: var(--grey)};
 tbody {
     border-bottom: 1px solid var(--structure);
 }
-#refs {
-    font-size: 90%;
-    column-count: 2;
-}
-#refs > .csl-entry {
-    padding-bottom: 0.2em;
-    padding-top: 0.2em;
-}
+
+
 .hanging-indent > .csl-entry {
     padding-left: 15px ;
     text-indent: -15px ;
