@@ -54,14 +54,6 @@ code, pre {
 pre {
     white-space: pre-wrap;
 }
-h1, h2, h3 {
-    margin: 10px auto;
-    color: var(--structure);
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    max-width: 700px;
-}
 
 .header--title {
     font-weight: 600;
@@ -81,6 +73,9 @@ footer {
     font-weight: 300;
 }
 
+
+
+/* max width stuff here */
 .abstract {
     color: var(--light);
     margin: 0em auto 5em;
@@ -101,6 +96,20 @@ header {
 }
 article p{
     max-width: 700px;
+}
+h1, h2, h3 {
+    margin: 10px auto;
+    color: var(--structure);
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    max-width: 700px;
+}
+blockquote {
+    font-style: italic;
+    margin: 1rem auto;
+    font-size: 1.2em;
+    max-width: 500px;
 }
 
 

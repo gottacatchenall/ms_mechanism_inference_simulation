@@ -5,14 +5,20 @@ bibliography: [references.bib]
 
 # Introduction
 
+
+A primary goal of ecology is understand the processes produce Earth ecosystems.
+There has been a longstanding debate if there is generality to these processes
+[@Lawton1999].
+and determine if there is any general laws
+
 Ecosystems are quintessentially complex [@Levin1992ProPat]---they are the
 emergent result of biological processes that exist across spatial, temporal, and
-organizational scales. These processes enable, influence and
-compound on one another, resulting in the diversity of functions and forms
-of life on Earth.
+organizational scales. These processes enable, influence and compound on one
+another, resulting in the diversity of functions and forms of life on Earth.
 
-How can we understand the processes and mechanisms that produce Earth ecosystems
-when their composition is driven by so many factors?
+How can we determine if there are general features of these systems when their
+composition is driven by so many factors which interact in nonlinear ways?
+
 
 Understanding how human activity is changing Earth's ecosystems, and how to best
 predict the ways ecosystems will change in the future, remains a fundamental
@@ -29,7 +35,7 @@ given spatial/temporal/organizational scale. This results in the question: what
 are the mechanisms best describe a set of data? Different levels of abstraction
 have proven successful in predicting how biological systems change over time.
 
-ScientificML [@Rackauckas2020UniDif].
+![TODO: Slices of Metacommunities. Concept space.](./figures/tensorslices.png){#fig:slices}
 
 How do we predict how ecosystems will change at the scale of community ecology?
 The mechanisms that influence the dynamics of communities are multifaceted.
@@ -45,7 +51,9 @@ construction. How does species respond to variation and change in the
 environment? How does the composition of ecosystems (species) respond to
 evolutionary processes, which form the species pool?
 
-![TODO: Slices of Metacommunities. Concept space.](./figures/tensorslices.png){#fig:slices}
+ScientificML [@Rackauckas2020UniDif].
+
+
 
 
 The data we collect from these systems is inherently noisy. This data contains
@@ -85,6 +93,9 @@ be represented as a a tensor.
 
 
 # Using simulation to infer mechanisms in ecology
+
+Simulation models have a long history in ecology.
+However, fitting these models to data has proven difficult for a variety of reasons. 
 
 ![Likelihood free inference for metacommunity ecology ](./figures/likelihoodfreeinference.png){#fig:information}
 
