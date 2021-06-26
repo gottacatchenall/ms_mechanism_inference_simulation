@@ -5,16 +5,17 @@ bibliography: [references.bib]
 
 # Introduction
 
+Earth's ecosystems are immensely variable. 
 
-A primary goal of ecology is understand the processes produce Earth ecosystems.
-There has been a longstanding debate if there is generality to these processes
-[@Lawton1999].
-and determine if there is any general laws
+ There has been a longstanding debate
+if there are laws in ecology. [@Lawton1999]. and determine if there
+is any general laws
+
 
 Ecosystems are quintessentially complex [@Levin1992ProPat]---they are the
 emergent result of biological processes that exist across spatial, temporal, and
 organizational scales. These processes enable, influence and compound on one
-another, resulting in the diversity of functions and forms of life on Earth.
+another, resulting
 
 How can we determine if there are general features of these systems when their
 composition is driven by so many factors which interact in nonlinear ways?
@@ -95,7 +96,7 @@ be represented as a a tensor.
 # Using simulation to infer mechanisms in ecology
 
 Simulation models have a long history in ecology.
-However, fitting these models to data has proven difficult for a variety of reasons. 
+However, fitting these models to data has proven difficult for a variety of reasons.
 
 ![Likelihood free inference for metacommunity ecology ](./figures/likelihoodfreeinference.png){#fig:information}
 
