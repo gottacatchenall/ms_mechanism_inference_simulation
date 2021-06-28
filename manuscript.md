@@ -10,30 +10,39 @@ biological processes that exist across spatial, temporal, and organizational
 scales  [@Levin1992ProPat]. These processes enable, influence and compound on
 one another, resulting in the immense diversity of functions and forms of life
 on Earth. There has been a longstanding debate if there is any _generality_, or
-better _universality_, to these processes. [@Lawton1999]. Answering this
+better _universality_, to these processes [@Lawton1999]. Answering this
 question itself proves difficult---how can we determine if there is some set of
 universal rules or mechanisms that underlie these systems when they are
 inherently driven by so many factors which interact in nonlinear and
 probabilistic ways?
 
-There are innumerably many biological mechanisms that have been posited at any
-given spatial/temporal/organizational scale.
-@Lawton1999 argues that ecological community is frought with too many "contingencies" in order to find universality, and that the solution is
-to expand
+Innumerable biological mechanisms have been posited at various organizational
+scales. How does one decide the best spatial, temporal, and organizational scale
+at which to model a processes? Where would we look for universality?
+The scales at which we propose mechanisms are subject to selection bias based on
+the data we can collect---looking for your keys where the light is better.
 
-How does one decide the best spatial, temporal, and organizational scale at which
-to model a processes?  
+![TODO: Slices of Metacommunities. Concept space.](./figures/tensorslices.png){#fig:slices}
+
+@Lawton1999 argues that as an organizational scale, the ecology community is
+frought with too many "contingencies" in order to find universality.
+Partially in response to Lawton's paper, the metacommunity framework
+[@Leibold2003MetCom] sought to address the inherently spatial nature of
+metacommunity processes. @Vellend2010ConSyn posits four fundamental processes,
+analogous to evo gen. @Poisot2015BeySpe also notes the importance of variation
+in traits and abunance.  Necessary additional spatial and temporal dimension to
+community processes.
+
+What is in this paper? We argue simulation models can enable us to test more
+complex interaction mechanisms.
+
 Prediction as a measure of model efficacy.
+Dynamical systems perspective on metacommunity ecology.
+
+# Predictive ecology as a scientific epistemology
+
 What scales are inherently more predictable.
 
-Partially in response to Lawton's paper, the metacommunity framework
-[@Leibold2003MetCom] sought to address the inherently spatial nature of metacommunity
-processes.
-[@Vellend2010ConSyn] posits this.
-
-and interactions themselves vary across time [@Poisot2015BlaBla].
-
-# predictive ecology as a scientific epistemology
 
 Here we propose that simulation models have the potential to infer
 This results in the question: what are the mechanisms best describe a set of data?
@@ -60,7 +69,6 @@ nature works that we can almost call it real.
 Different levels of conceptual abstraction have
 proven successful in predicting how biological systems change over time.
 
-![TODO: Slices of Metacommunities. Concept space.](./figures/tensorslices.png){#fig:slices}
 
 Still, predicting how ecosystems will change in the future remains a fundamental
 goal of ecology.
