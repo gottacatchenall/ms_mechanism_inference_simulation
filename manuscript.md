@@ -104,12 +104,25 @@ be represented as a a tensor.
 
 Simulation models have a long history in ecology.
 However, fitting these models to data has proven difficult for a variety of reasons.
-High-dimensional model with little data. Further 
+High-dimensional model, compounded by little data.
 
-Brief mention of ABC.
-Discuss other likelihood-free methods.
+What is enabling this now? computational capacity and methods for optimization
+parameter estimation.
 
 ![Likelihood free inference for metacommunity ecology ](./figures/likelihoodfreeinference.png){#fig:information}
+
+
+# Case study: species versus community level occupancy models
+
+In this section we use data from LTER Minnesota lakes some type of fish data. We
+look at the occupancy dynamics of five species (list species) across NS sites
+for each year from 198something-200something. We fit two simulation models via
+likelihood-free inference: first where each species exhibit independent occupancy dynamics
+according to a Levins model, and second where species colonization probability
+is weighted by a matrix of species interactions $A$, which itself is an object
+of inference.
+
+
 
 
 # Predictive ecology as a scientific epistemology
