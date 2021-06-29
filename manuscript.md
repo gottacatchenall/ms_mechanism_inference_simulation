@@ -19,30 +19,31 @@ probabilistic ways?
 The difficulty of inferring the mechanisms that drive any complex system are
 twofold: 1) deciding on the best spatial, temporal, and organizational scale at
 which to model a process and 2) determining which the best set of models and
-parameters explain a particular dataset collected at that scale.
-Innumerable biological mechanisms have been posited at various spatial, temporal,
-and organizational scales (@fig:slices). How does one decide the best scale
-at which to model a processes, or at what scale it is best to look for universality?
+parameters explain a particular dataset collected at that scale. Innumerable
+biological mechanisms have been posited at various spatial, temporal, and
+organizational scales (@fig:slices). How does one decide the best scale at which
+to model a processes, or at what scale it is best to look for universality?
 
 
 ![Conceptual space with three axes.](./figures/tensorslices.png){#fig:slices}
 
 @Lawton1999 argues that as an organizational scale, the ecology community is
-frought with too many "contingencies" in order to find universality.
-The scales at which we propose mechanisms are subject to selection bias based on
-the data we can collect---looking for lost keys where the light is better.
+frought with too many "contingencies" in order to find universality. Partially
+in response to Lawton's paper, the metacommunity framework [@Leibold2003MetCom]
+sought to address the inherently spatial nature of metacommunity processes.
+@Vellend2010ConSyn posits four fundamental processes, analogous to evolutionary
+genetics. @Poisot2015BeySpe also notes the importance of variation in traits and
+abundance.  Necessary additional spatial and temporal dimension to community
+processes. The scales at which we propose mechanisms are subject to selection
+bias based on the data we can collect---looking for lost keys where the light is
+better.
 
-Partially in response to Lawton's paper, the metacommunity framework
-[@Leibold2003MetCom] sought to address the inherently spatial nature of
-metacommunity processes. @Vellend2010ConSyn posits four fundamental processes,
-analogous to evolutionary gen. @Poisot2015BeySpe also notes the importance of variation
-in traits and abundance.  Necessary additional spatial and temporal dimension to
-community processes.
 
-
-What is in this paper? We argue simulation models can enable us to test more
-complex interaction mechanisms. Prediction as a measure of model efficacy.
-Dynamical systems perspective on metacommunity ecology.
+What is in this paper? We argue that advances in computational resources and
+methods for likelihood-free inference put us in the place where  simulation
+models can enable us to test more complex interaction mechanisms [@Cranmer]. Prediction as
+a measure of model efficacy. Dynamical systems perspective on metacommunity
+ecology.
 
 How do we predict how ecosystems will change at the scale of community ecology?
 The mechanisms that influence the dynamics of communities are multifaceted.
@@ -60,23 +61,25 @@ evolutionary processes, which form the species pool?
 
 ScientificML [@Rackauckas2020UniDif].
 
-
-
-
 The data we collect from these systems is inherently noisy. This data contains
-information produced by a combination of "true" mechanisms (interacting in
-unknown ways) combined with noise. We first need to ask if we can understand the
-mechanisms producing these phenomena, which we argue is synonymous with
-prediction. The second question then becomes can we forecast/manage these
-systems? Example of success in climate/weather forecasting.
+information produced by a combination of the amalgamation of "true" ecological
+and evolutionary mechanisms (interacting in unknown ways) compounded by sampling
+biases. We first need to ask if we can understand the mechanisms producing these
+phenomena, which we argue is synonymous with prediction. The second question
+then becomes can we forecast/manage these systems? Example of success in
+climate/weather forecasting.
 
 # A dynamical systems perspective on ecological mechanisms
 
-Dynamical systems is the subfield of mathematics relating to understanding how
-systems change over time. often by applying a geometric perspective to
-state-space.
+Dynamical systems is the subfield of mathematics related to systems that change
+over time.
+
+Often by applying a geometric perspective to state-space.
+What is state space?
 
 ***What is an ecological mechanism?***
+A mechanism describes how the state of a system changes from one timestep to
+the next.  
 A mapping between low dimensional latent/parameter space and information space.
 
 Why is simulation necessary in ecology? They allow us to produce data that
@@ -101,6 +104,10 @@ be represented as a a tensor.
 
 Simulation models have a long history in ecology.
 However, fitting these models to data has proven difficult for a variety of reasons.
+High-dimensional model with little data. Further 
+
+Brief mention of ABC.
+Discuss other likelihood-free methods.
 
 ![Likelihood free inference for metacommunity ecology ](./figures/likelihoodfreeinference.png){#fig:information}
 
