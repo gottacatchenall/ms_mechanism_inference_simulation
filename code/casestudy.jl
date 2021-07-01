@@ -3,7 +3,7 @@ using Plots
 using StatsBase
 using Distributions
 
-justfish = CSV.read(joinpath("code", "LTERwisconsinfish.csv"), DataFrame)
+justfish = CSV.read(joinpath(".", "LTERwisconsinfish.csv"), DataFrame)
 
 
 years = unique(justfish[!, :year4])
@@ -74,40 +74,49 @@ end
 #
 # --------------------------------------------------------
 
+# time series for Large Mouthbass across locations 
 LMB = tensor[1,:,:]
 
-priorE = Beta(1,2)
-priorC = Beta(1,2)
+# rejection sampling ABC based on tolerance ρ
+function rejectionabc(;priorC=Beta(1,2), priorE=Beta(1,2))
+    chainsteps = 100000
+    postE = zeros(chainsteps)
+    postC = zeros(chainsteps)
 
+    step = 1
+    ρ = 0.1
+    while step < chainsteps
+        # draw candidate params 
+        ehat = rand(priorE)
+        chat = rand(priorC)
 
-chainsteps = 100000
+        sampledtraj = singlespeciesocc(chat, ehat)
 
-postE = zeros(chainsteps)
-postC = zeros(chainsteps)
+        sprime = summarystats(sampledtraj)
+        s = summarystats(LMB)
 
-step = 1
-ρ = 0.1
-while step < chainsteps
-    # draw candidate params 
-    ehat = rand(priorE)
-    chat = rand(priorC)
+        sumsatdist = sqrt(sum((s .+ sprime).^2))
 
-    sampledtraj = singlespeciesocc(chat, ehat)
-
-    sumsatdist = summarystats(sampledtraj, LMB)
-    
-    if sumsatdist < ρ
-        postE[step] = ehat
-        postC[step] = chat
-        step += 1
+        if sumsatdist < ρ
+            postE[step] = ehat
+            postC[step] = chat
+            step += 1
+        end
     end
 end
 
-function summarystats(simtrajectory, empiricaltrajectory)
-    # meanocc
-    # varocc
-    # 
+function summarystats(traj)
+    
+    globalmeanocc = meanocc(traj)
+    globalvarocc = []
+
+    localmeanocc = []
+    localvarianceofthemean = var(localmeanocc)
+    localvarocc  = traj[p,t]
+
     
 
-
 end
+
+meanocc(traj) = nothing  
+varocc(traj) = nothing  
