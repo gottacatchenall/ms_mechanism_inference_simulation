@@ -132,8 +132,9 @@ Panel C: Mean error for proportion occupancy for each model.
 Is proportion more "predictable" than individual occupancy?
 
 ***We need to talk about summary statistics***
-Which ones make effective predictions? What models do we use to fit
-empirical data to simulated (generative adversarial networks, MCMC-ABC methods, etc.)
+
+Which ones make effective predictions? What models do we use to fit empirical
+data to simulated (generative adversarial networks, MCMC-ABC methods, etc.)
 
 
 # Predictive ecology as a scientific epistemology
@@ -185,12 +186,13 @@ to avoid effective prediction at all [@Pennekamp2019IntPre; @Beckage2011LimPre;
 
 # Conclusion
 
-
-
-What does is mean for a model to be correct?
-Take the logistic model, for example. Although
-logistic growth is observed in many model and to some degree non-model systems, it is hard to say there is some intrinsic truth to this--i.e. that logistic growth is an ecoloigical "law". The phenomena of population dynamics are the result of
-individual organisms being born, reproducing, and dying at a lower level of organization, but the logistic model is a useful abstraction under some circumstances.
+What does is mean for a model to be correct? Take the logistic model, for
+example. Although logistic growth is observed in many model and to some degree
+non-model systems, it is hard to say there is some intrinsic truth to this--i.e.
+that logistic growth is an ecoloigical "law". The phenomena of population
+dynamics are the result of individual organisms being born, reproducing, and
+dying at a lower level of organization, but the logistic model is a useful
+abstraction under some circumstances.
 
 
 It is useful the notion that a model represents some "truth" about the world,
