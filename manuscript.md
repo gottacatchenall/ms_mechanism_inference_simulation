@@ -102,27 +102,38 @@ be represented as a a tensor.
 
 # Using simulation to infer mechanisms in ecology
 
-Simulation models have a long history in ecology.
-However, fitting these models to data has proven difficult for a variety of reasons.
-High-dimensional model, compounded by little data.
+Simulation models have a long history in ecology. However, fitting these models
+to data has proven difficult for a variety of reasons. No likelihood function.
+General problem of high-dimensional model, compounded by little data.
 
 What is enabling this now? computational capacity and methods for optimization
-parameter estimation.
+parameter estimation. More data.
 
 ![Likelihood free inference for metacommunity ecology ](./figures/likelihoodfreeinference.png){#fig:information}
 
 
 # Case study: species versus community level occupancy models
 
-In this section we use data from LTER Minnesota lakes some type of fish data. We
+In this section we use data from LTER Minnesota lakes for five fish species. We
 look at the occupancy dynamics of five species (list species) across NS sites
 for each year from 198something-200something. We fit two simulation models via
-likelihood-free inference: first where each species exhibit independent occupancy dynamics
-according to a Levins model, and second where species colonization probability
-is weighted by a matrix of species interactions $A$, which itself is an object
-of inference.
+likelihood-free inference: first where each species exhibit independent
+occupancy dynamics according to a Levins model, and second where species
+colonization probability is weighted by a matrix of species interactions $A$,
+which itself is an object of inference.
 
 
+***Results figure***
+
+Panel A: AUC-ROC for single species prediction
+Panel B: AUC-ROC for community prediction
+Panel C: Mean error for proportion occupancy for each model.
+
+Is proportion more "predictable" than individual occupancy?
+
+***We need to talk about summary statistics***
+Which ones make effective predictions? What models do we use to fit
+empirical data to simulated (generative adversarial networks, MCMC-ABC methods, etc.)
 
 
 # Predictive ecology as a scientific epistemology
@@ -136,12 +147,7 @@ Science is fundamentally a theory of epistemology: a methodology and set of
 principles to make justified claims about the world. Descriptive claims about
 the world (the Earth goes around the sun, more species are found near the
 equator than far from it) are considered justified if they make predictions that
-agree with observed reality. In order to determine if a descriptive claim agrees
-with reality, it must be translated into a quantitative model that makes
-predictions about things that can be measured. These quantitative models take
-many forms. A subclass of these models, mechanistic models, represent latent
-processes that can not be observed or measured, either inherently or due to
-technological limitations.
+agree with observed reality.
 
 
 > The electron is a theory we use; it is so useful in understanding the way
@@ -150,10 +156,23 @@ nature works that we can almost call it real.
 > Richard P. Feynman
 
 
+The whole idea of searching for "laws" (Lawton) rests on an assumption that there
+are universal
+
+All models are wrong is not just about statistical models.
+
+In order to determine if a descriptive claim agrees
+with reality, it must be translated into a quantitative model that makes
+predictions about things that can be measured. These quantitative models take
+many forms. A subclass of these models, mechanistic models, represent latent
+processes that can not be observed or measured, either inherently or due to
+technological limitations.
+
+
+
 
 Different levels of conceptual abstraction have
 proven successful in predicting how biological systems change over time.
-
 
 Still, predicting how ecosystems will change in the future remains a fundamental
 goal of ecology.
