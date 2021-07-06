@@ -11,69 +11,81 @@ scales  [@Levin1992ProPat]. These processes enable, influence and compound on
 one another, resulting in the immense diversity of functions and forms of life
 on Earth. There has been a longstanding debate if there is any _generality_, or
 better _universality_, to these processes [@Lawton1999]. Answering this
-question itself proves difficult---how can we determine if there is some set of
-universal rules or mechanisms that underlie these systems when they are
-inherently driven by so many factors which interact in nonlinear and
-probabilistic ways?
+question, even in abstract, proves difficult. How can we determine if there is
+some set of universal rules or mechanisms that underlie systems driven by many
+factors which interact in nonlinear and probabilistic ways across separate
+organizational scales? We propose that this problem can be split into two parts:
+1) deciding on the best spatial, temporal, and organizational scale at which to
+model an ecosystem process, and 2) after a particular scale has been chosen,
+determining the best model at that scale and associated parameters that explain
+a particular dataset.
 
-The difficulty of inferring the mechanisms that drive any complex system are
-twofold: 1) deciding on the best spatial, temporal, and organizational scale at
-which to model a process and 2) determining which the best set of models and
-parameters explain a particular dataset collected at that scale. Innumerable
-biological mechanisms have been posited at various spatial, temporal, and
-organizational scales (@fig:slices). How does one decide the best scale at which
-to model a processes, or at what scale it is best to look for universality?
+The first question is to determine the proper scale to model a given system.
+Innumerable biological mechanisms have been posited at various spatial,
+temporal, and organizational scales (@fig:slices). How does one decide the best
+scale at which to model a processes, or at what scale it is best to look for
+universality?
 
+@LevinsLewontin writes
+> The problem for science is to understand the proper domain of explanation of
+> each abstraction rather than become its prisoner.
+
+The second question is, after a given scale is selected, to select the best model
+from a set of competing models at that scale.
+This question is primarily implicated with prediction---that is, what model best
+predicts ecological systems at a particular scale?
+This has applied need as forecasting is an imperative in ecology.
+Some scales are more predictable than others.
 
 ![Conceptual space with three axes.](./figures/tensorslices.png){#fig:slices}
 
-@Lawton1999 argues that as an organizational scale, the ecology community is
-frought with too many "contingencies" in order to find universality. Partially
-in response to Lawton's paper, the metacommunity framework [@Leibold2003MetCom]
-sought to address the inherently spatial nature of metacommunity processes.
-@Vellend2010ConSyn posits four fundamental processes, analogous to evolutionary
-genetics. @Poisot2015BeySpe also notes the importance of variation in traits and
-abundance.  Necessary additional spatial and temporal dimension to community
-processes. The scales at which we propose mechanisms are subject to selection
-bias based on the data we can collect---looking for lost keys where the light is
-better.
 
+@Lawton1999 argues that as an organizational scale, the ecology
+community is frought with too many "contingencies" in order to find
+universality. Partially in response to Lawton's paper, the metacommunity
+framework [@Leibold2003MetCom] sought to address the inherently spatial nature
+of metacommunity processes. @Vellend2010ConSyn posits four fundamental
+processes, analogous to evolutionary genetics. @Poisot2015BeySpe also notes the
+importance of variation in traits and abundance.  Necessary additional spatial
+and temporal dimension to community processes. The scales at which we propose
+mechanisms are subject to selection bias based on the data we can
+collect---looking for lost keys where the light is better.
+
+
+The data we collect from ecological systems is inherently noisy. This data
+contains information produced by a combination of the amalgamation of "true"
+ecological and evolutionary mechanisms (interacting in unknown ways) compounded
+by sampling biases.
 
 What is in this paper? We argue that advances in computational resources and
-methods for likelihood-free inference put us in the place where  simulation
-models can enable us to test more complex interaction mechanisms [@Cranmer]. Prediction as
-a measure of model efficacy. Dynamical systems perspective on metacommunity
-ecology.
+methods for likelihood-free inference put us in the place where simulation
+models can enable us to test more complex interaction mechanisms [@Cranmer]. We
+present a conceptual framework for determining the best model from a set of
+competing simulation models. We then present an example where we fit data from
+LTER wisconsin fish to both individual-species level and community level
+simulation models to determine which provides better predictions about occupancy
+over time.  
 
-How do we predict how ecosystems will change at the scale of community ecology?
-The mechanisms that influence the dynamics of communities are multifaceted.
-@Vellend2010ConSyn proposes four fundamental mechanisms of community ecology:
-speciation, selection, drift, and dispersal. The metacommunity concept
-[@Leibold2003MetCom] provides a framework to understand how species interact,
-how they are distributed across space, and how their changes through time. This
-enables conceptual synthesis of evolutionary (trait drift and selection in
-response to both the environment and other species) and ecological (species
-interacting with oneanother and their environment) processes.
-Many ecological and evolutionary processes fall within the metacommunity
-construction. How does species respond to variation and change in the
-environment? How does the composition of ecosystems (species) respond to
-evolutionary processes, which form the species pool?
+
 
 ScientificML [@Rackauckas2020UniDif].
 
-The data we collect from these systems is inherently noisy. This data contains
-information produced by a combination of the amalgamation of "true" ecological
-and evolutionary mechanisms (interacting in unknown ways) compounded by sampling
-biases. We first need to ask if we can understand the mechanisms producing these
+
+First we need to ask if we can understand the mechanisms producing these
 phenomena, which we argue is synonymous with prediction. The second question
-then becomes can we forecast/manage these systems? Example of success in
+becomes can we forecast/manage these systems? Example of success in
 climate/weather forecasting.
 
-# A dynamical systems perspective on ecological mechanisms
+# A state-space perspective on ecological mechanisms
+
+In order to present the conceptual framework for simulation-based inference,
+we first need to propose some definitions. This conceptual framework
+is based around consider the _dynamics_ of a metacommunity system by considering
+the _geometry_ of how that system changes in _state-space_.
+
 
 Dynamical systems is the subfield of mathematics related to systems that change
 over time.
-
 Often by applying a geometric perspective to state-space.
 What is state space?
 
@@ -84,7 +96,6 @@ A mapping between low dimensional latent/parameter space and information space.
 
 Why is simulation necessary in ecology? They allow us to produce data that
 encodes explicit mechanism [@Crutchfield1992SemThe].
-
 
 ***Metacommunity states and mechanisms***
 Within this abstraction, a metacommunity state is a set of measurements for
@@ -102,8 +113,12 @@ be represented as a a tensor.
 
 # Using simulation to infer mechanisms in ecology
 
-Simulation models have a long history in ecology. However, fitting these models
-to data has proven difficult for a variety of reasons. No likelihood function.
+Simulation models have a long history in ecology. cite some examples.
+
+Still, fitting simulation models to data is difficult.
+^what does this mean to someone who doesn't know what fitting means
+
+No likelihood function.
 General problem of high-dimensional model, compounded by little data.
 
 What is enabling this now? computational capacity and methods for optimization
@@ -118,16 +133,24 @@ In this section we use data from LTER Minnesota lakes for five fish species. We
 look at the occupancy dynamics of five species (list species) across NS sites
 for each year from 198something-200something. We fit two simulation models via
 likelihood-free inference: first where each species exhibit independent
-occupancy dynamics according to a Levins model, and second where species
-colonization probability is weighted by a matrix of species interactions $A$,
-which itself is an object of inference.
+occupancy dynamics, and second where each species has the same $c$ and $e$ value.
+
+***Independent Species Model***
+We simulate dynamics where each species $i$ has a colonization probability $c_i$
+and an extinction probability $e_i$. These are assumed to be a fixed value for
+each species which does not vary over time.
+
+***Unified Model***
+The colonization for each species $i$ is $c$, extinction probability is $e$.
 
 
 ***Results figure***
 
 Panel A: AUC-ROC for single species prediction
-Panel B: AUC-ROC for community prediction
+Panel B: AUC-ROC for unified prediction
 Panel C: Mean error for proportion occupancy for each model.
+
+***Assessing fit***
 
 Is proportion more "predictable" than individual occupancy?
 
@@ -136,6 +159,9 @@ Is proportion more "predictable" than individual occupancy?
 Which ones make effective predictions? What models do we use to fit empirical
 data to simulated (generative adversarial networks, MCMC-ABC methods, etc.)
 
+Caveats on more complex models for this simple example.
+
+Refer to up-to-date resources on model fitting an assessment.
 
 # Predictive ecology as a scientific epistemology
 
@@ -150,6 +176,16 @@ the world (the Earth goes around the sun, more species are found near the
 equator than far from it) are considered justified if they make predictions that
 agree with observed reality.
 
+> The sciences do not try to explain, they hardly even try to interpret,
+> they mainly make models. By a model is meant a mathematical construct
+> which, with the addition of certain verbal interpretations, describes
+> observed phenomena. The justification of such a mathematical construct
+> is solely and precisely that it is expected to work - that is correctly
+> to describe phenomena from a reasonably wide area. Furthermore, it must
+> satisfy certain esthetic criteria - that is, in relation to how much it
+> describes, it must be rather simple.
+>
+> John Von Neumann
 
 > The electron is a theory we use; it is so useful in understanding the way
 nature works that we can almost call it real.
