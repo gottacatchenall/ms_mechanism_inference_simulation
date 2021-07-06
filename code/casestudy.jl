@@ -5,48 +5,56 @@ using StatsPlots
 using Distributions
 using ProgressMeter
 
-justfish = CSV.read(joinpath(".", "LTERwisconsinfish.csv"), DataFrame)
+const specieslist = ["LARGEMOUTHBASS", "SMALLMOUTHBASS", "YELLOWPERCH", "PUMPKINSEED"]
 
-unique(justfish[!, :species])
+function read_data(; filename = "LTERwisconsinfish.csv")
+    justfish = CSV.read(joinpath(".", filename), DataFrame)
+    species = specieslist
+    lakes = unique(justfish[!,:lakename])
+    years = unique(justfish[!, :year4])
 
-species = String.(unique(justfish[!, :species]))
-species = ["LARGEMOUTHBASS", "SMALLMOUTHBASS", "YELLOWPERCH", "PUMPKINSEED"]
-lakes = unique(justfish[!,:lakename])
-years = unique(justfish[!, :year4])
+    tensor = zeros((length(species), length(lakes), length(years)))
 
-tensor = zeros((length(species), length(lakes), length(years)))
-
-# not good code 
-for (li, lake) in enumerate(lakes)
-    for (si, sp) in enumerate(species)
-        for (yi, year) in enumerate(years)
-            hereandnow = filter(
-                    [:species, :year4, :lakename] => 
-                    (s,y, l) -> s == sp && y == year && l == lake, justfish
-                )
-            if nrow(hereandnow) > 0 
-                tensor[si, li, yi] = 1
+    # not good code 
+    for (li, lake) in enumerate(lakes)
+        for (si, sp) in enumerate(species)
+            for (yi, year) in enumerate(years)
+                hereandnow = filter(
+                        [:species, :year4, :lakename] => 
+                        (s,y, l) -> s == sp && y == year && l == lake, justfish
+                    )
+                if nrow(hereandnow) > 0 
+                    tensor[si, li, yi] = 1
+                end
             end
         end
     end
+
+    # split into test and training by defining a given number of training years
+
+    return tensor
+    
 end
 
 
-# plot mean occ by species 
-plotsvec = []
-for s in 1:length(species)
-    plt = plot(legend=:none, frame=:box, title="$(species[s])")
+function plot_meanoccupancy(df)
+    species = specieslist;
+    lakes = unique(df[!,:lakename])
+    years = unique(df[!, :year4])
+    plotsvec = []
+    for s in 1:length(species)
+        plt = plot(legend=:none, frame=:box, title="$(species[s])")
 
-    mns = [mean(tensor[s,:,i]) for i in 1:length(years)]
+        mns = [mean(tensor[s,:,i]) for i in 1:length(years)]
 
-    df = sort(DataFrame(years=years,mns=mns), [:years])
-    scatter!(plt, df.years,df.mns, ma=0.5)
+        df = sort(DataFrame(years=years,mns=mns), [:years])
+        scatter!(plt, df.years,df.mns, ma=0.5)
 
-    plot!(plt, df.years,df.mns, lc=:dodgerblue)
-    push!(plotsvec, plt)
+        plot!(plt, df.years,df.mns, lc=:dodgerblue)
+        push!(plotsvec, plt)
+    end
+    plot(plotsvec...,) 
 end
-plot(plotsvec...,) 
-
 
 
 
@@ -156,7 +164,7 @@ function singlespeciessummarystats(traj)
     end
 
     mnturnoverrate = !isnan(tos/ct) ? (tos/ct) :  0
-    return [mnturnoverrate,globalmeanocc, globalvarocc]
+    return [mnturnoverrate, globalmeanocc, globalvarocc]
 end
 
 c,e = independentabc(tensor, ρ = 0.15)
