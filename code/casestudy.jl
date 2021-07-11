@@ -205,7 +205,7 @@ scatter!(c[1,:],e[1,:], ma=0.01, mc=:dodgerblue, label="posterior")
 scatter!([realc], [reale], label="true parameters", ms=10, mc=:green)
 plot(plots..., size=(800,800))
 
-savefig(plt, "comparedtotruth.png")
+savefig("comparedtotruth.png")
 # now generte predictions of future trajectories by taking 
 # the most recent state as an initial condition and generate traj
 

@@ -26,7 +26,8 @@ temporal, and organizational scales (@fig:slices). How does one decide the best
 scale at which to model a processes, or at what scale it is best to look for
 universality?
 
-@LevinsLewontin writes
+@LevinsLewontin write
+
 > The problem for science is to understand the proper domain of explanation of
 > each abstraction rather than become its prisoner.
 
@@ -59,22 +60,13 @@ by sampling biases.
 
 What is in this paper? We argue that advances in computational resources and
 methods for likelihood-free inference put us in the place where simulation
-models can enable us to test more complex interaction mechanisms [@Cranmer]. We
+models can enable us to test more complex interaction mechanisms [@Cranmer2020FroSim]. We
 present a conceptual framework for determining the best model from a set of
 competing simulation models. We then present an example where we fit data from
 LTER wisconsin fish to both individual-species level and community level
 simulation models to determine which provides better predictions about occupancy
-over time.  
+over time. ScientificML [@Rackauckas2020UniDif].
 
-
-
-ScientificML [@Rackauckas2020UniDif].
-
-
-First we need to ask if we can understand the mechanisms producing these
-phenomena, which we argue is synonymous with prediction. The second question
-becomes can we forecast/manage these systems? Example of success in
-climate/weather forecasting.
 
 # A state-space perspective on ecological mechanisms
 
@@ -233,7 +225,6 @@ dynamics are the result of individual organisms being born, reproducing, and
 dying at a lower level of organization, but the logistic model is a useful
 abstraction under some circumstances.
 
-
 It is useful the notion that a model represents some "truth" about the world,
 instead models have vary in their usefulness. predictive accuracy is  one
 measure of this usefulness. The problem is you cannot tell the difference
@@ -249,7 +240,6 @@ that shares statistical properties with empirical data can still be useful.
 ***What are the limitations of the utility of mechanistic simulations***
 There are limits to the scope of simulation models. How do we know when they
 are appropriate, versus a ML/non-mechanistic model?
-
 Need for flexible set of tools to do this, setting up the next chapter.
 
 
