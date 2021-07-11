@@ -167,15 +167,20 @@ function singlespeciessummarystats(traj)
     return [mnturnoverrate, globalmeanocc, globalvarocc]
 end
 
+tensor = read_data()
 c,e = independentabc(tensor, ρ = 0.15)
+
+
 plots = []
+push!(plots, scatter(rand(Beta(1,2), 5000), rand(Beta(1,2), 5000), title="Prior", ma=0.03, mc=:red, aspectratio=1, frame=:box, xlims=(0,1), ylims=(0,1), label="prior"))
 for s in 1:4
     x,y =  c[s], e[s]
-    plt  = scatter(x,y,size=(500,500),label="post", mc=:purple, ma=0.03,  aspectratio=1, frame=:box, xlims=(0,1), ylims=(0,1))
-    title!(species[s])
-    push!(plots, plt)
+    postplt = scatter(x,y,size=(500,500),label="post", mc=:purple, ma=0.01,  aspectratio=1, frame=:box, xlims=(0,1), ylims=(0,1))
+    title!(postplt, specieslist[s])
+    push!(plots, postplt)
 end
-plot(plots...)
+plot(plots..., size=(900,900))
+savefig("abcfit.png")
 
 """
 
@@ -193,11 +198,14 @@ realc, reale = 0.3, 0.1
 pseudodata = singlespeciesocc(realc, reale)
 c,e = independentabc(pseudodata, ρ = 0.2)
 
-plt  = scatter(size=(500,500),label="prior", mc=:purple, ma=0.03,  aspectratio=1, frame=:box, xlims=(0,1), ylims=(0,1))
+plots = []
+push!(plots, scatter(rand(Beta(1,2), 5000), rand(Beta(1,2), 5000), title="Prior", ma=0.03, mc=:red, aspectratio=1, frame=:box, xlims=(0,1), ylims=(0,1), label="prior"))
+push!(plots, scatter(size=(500,500),label="prior", mc=:purple, ma=0.03,  aspectratio=1, frame=:box, xlims=(0,1), ylims=(0,1)))
 scatter!(c[1,:],e[1,:], ma=0.01, mc=:dodgerblue, label="posterior")
-scatter!([realc], [reale], ms=10, mc=:green)
+scatter!([realc], [reale], label="true parameters", ms=10, mc=:green)
+plot(plots..., size=(800,800))
 
-savefig(plt, "singlespeciesfit.png")
+savefig(plt, "comparedtotruth.png")
 # now generte predictions of future trajectories by taking 
 # the most recent state as an initial condition and generate traj
 

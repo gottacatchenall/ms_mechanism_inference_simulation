@@ -143,24 +143,27 @@ each species which does not vary over time.
 ***Unified Model***
 The colonization for each species $i$ is $c$, extinction probability is $e$.
 
+![here's the fit as of now for individual species](./figures/abcfit.png){#fig:abcfit}
 
 ***Results figure***
-
 Panel A: AUC-ROC for single species prediction
 Panel B: AUC-ROC for unified prediction
 Panel C: Mean error for proportion occupancy for each model.
 
 ***Assessing fit***
 
-Is proportion more "predictable" than individual occupancy?
+Test it on simulated data to see if it works.
+![TODO](./figures/comparedtotruth.png){#fig:pseudodata}
+
 
 ***We need to talk about summary statistics***
+
+Is proportion more "predictable" than individual occupancy?
 
 Which ones make effective predictions? What models do we use to fit empirical
 data to simulated (generative adversarial networks, MCMC-ABC methods, etc.)
 
 Caveats on more complex models for this simple example.
-
 Refer to up-to-date resources on model fitting an assessment.
 
 # Predictive ecology as a scientific epistemology
