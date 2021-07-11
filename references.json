@@ -1,0 +1,580 @@
+[
+    {
+        "DOI": "10.1890/ES11-00211.1",
+        "author": [
+            {
+                "family": "Beckage",
+                "given": "Brian"
+            },
+            {
+                "family": "Gross",
+                "given": "Louis J."
+            },
+            {
+                "family": "Kauffman",
+                "given": "Stuart"
+            }
+        ],
+        "container-title": "Ecosphere",
+        "id": "Beckage2011LimPre",
+        "issue": "11",
+        "issued": {
+            "date-parts": [
+                [
+                    2011
+                ]
+            ]
+        },
+        "keyword": "chaos,climate change,computational incompressibility,computational irreducibility,ecological communities,invasive species,niche,prediction",
+        "page": "art125",
+        "title": "The limits to prediction in ecological systems",
+        "type": "article-journal",
+        "volume": "2"
+    },
+    {
+        "DOI": "10.1111/ecog.05504",
+        "author": [
+            {
+                "family": "Brodie",
+                "given": "Stephanie"
+            },
+            {
+                "family": "Abrahms",
+                "given": "Briana"
+            },
+            {
+                "family": "Bograd",
+                "given": "Steven J."
+            },
+            {
+                "family": "Carroll",
+                "given": "Gemma"
+            },
+            {
+                "family": "Hazen",
+                "given": "Elliott L."
+            },
+            {
+                "family": "Muhling",
+                "given": "Barbara A."
+            },
+            {
+                "family": "Buil",
+                "given": "Mercedes Pozo"
+            },
+            {
+                "family": "Smith",
+                "given": "James A."
+            },
+            {
+                "family": "Welch",
+                "given": "Heather"
+            },
+            {
+                "family": "Jacox",
+                "given": "Michael G."
+            }
+        ],
+        "container-title": "Ecography",
+        "id": "Brodie2021ExpTim",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "keyword": "climate change,ecological forecasting,prediction,spatial ecology,species distribution models,temporal decomposition",
+        "page": "832-844",
+        "title": "Exploring timescales of predictability in species distributions",
+        "type": "article-journal",
+        "volume": "44"
+    },
+    {
+        "DOI": "10.1111/ecog.05504",
+        "author": [
+            {
+                "family": "Brodie",
+                "given": "Stephanie"
+            },
+            {
+                "family": "Abrahms",
+                "given": "Briana"
+            },
+            {
+                "family": "Bograd",
+                "given": "Steven J."
+            },
+            {
+                "family": "Carroll",
+                "given": "Gemma"
+            },
+            {
+                "family": "Hazen",
+                "given": "Elliott L."
+            },
+            {
+                "family": "Muhling",
+                "given": "Barbara A."
+            },
+            {
+                "family": "Buil",
+                "given": "Mercedes Pozo"
+            },
+            {
+                "family": "Smith",
+                "given": "James A."
+            },
+            {
+                "family": "Welch",
+                "given": "Heather"
+            },
+            {
+                "family": "Jacox",
+                "given": "Michael G."
+            }
+        ],
+        "container-title": "Ecography",
+        "id": "Brodie2021ExpTima",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "keyword": "climate change,ecological forecasting,prediction,spatial ecology,species distribution models,temporal decomposition",
+        "page": "832-844",
+        "title": "Exploring timescales of predictability in species distributions",
+        "type": "article-journal",
+        "volume": "44"
+    },
+    {
+        "DOI": "10.1002/bies.201900069",
+        "author": [
+            {
+                "family": "Chen",
+                "given": "Yize"
+            },
+            {
+                "family": "Angulo",
+                "given": "Marco Tulio"
+            },
+            {
+                "family": "Liu",
+                "given": "Yang-Yu"
+            }
+        ],
+        "container-title": "BioEssays",
+        "id": "Chen2019RevCom",
+        "issue": "12",
+        "issued": {
+            "date-parts": [
+                [
+                    2019
+                ]
+            ]
+        },
+        "keyword": "community ecology,ecological dynamics,functional response,symbolic regression",
+        "page": "1900069",
+        "title": "Revealing Complex Ecological Dynamics via Symbolic Regression",
+        "type": "article-journal",
+        "volume": "41"
+    },
+    {
+        "author": [
+            {
+                "family": "Cranmer",
+                "given": "Kyle"
+            },
+            {
+                "family": "Brehmer",
+                "given": "Johann"
+            },
+            {
+                "family": "Louppe",
+                "given": "Gilles"
+            }
+        ],
+        "container-title": "Proceedings of the National Academy of Sciences",
+        "id": "Cranmer2020FroSim",
+        "issue": "48",
+        "issued": {
+            "date-parts": [
+                [
+                    2020,
+                    12
+                ]
+            ]
+        },
+        "page": "30055-30062",
+        "title": "The frontier of simulation-based inference",
+        "type": "article-journal",
+        "volume": "117"
+    },
+    {
+        "author": [
+            {
+                "family": "Crutchfield",
+                "given": "James P"
+            }
+        ],
+        "id": "Crutchfield1992SemThe",
+        "issued": {
+            "date-parts": [
+                [
+                    1992
+                ]
+            ]
+        },
+        "page": "38",
+        "title": "Semantics and Thermodynamics",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.2307/3546712",
+        "author": [
+            {
+                "family": "Lawton",
+                "given": "John H."
+            }
+        ],
+        "container-title": "Oikos",
+        "id": "Lawton1999AreThe",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    1999,
+                    2
+                ]
+            ]
+        },
+        "page": "177",
+        "title": "Are There General Laws in Ecology?",
+        "type": "article-journal",
+        "volume": "84"
+    },
+    {
+        "DOI": "10.1111/j.1461-0248.2004.00608.x",
+        "author": [
+            {
+                "family": "Leibold",
+                "given": "M. A."
+            },
+            {
+                "family": "Holyoak",
+                "given": "M."
+            },
+            {
+                "family": "Mouquet",
+                "given": "N."
+            },
+            {
+                "family": "Amarasekare",
+                "given": "P."
+            },
+            {
+                "family": "Chase",
+                "given": "J. M."
+            },
+            {
+                "family": "Hoopes",
+                "given": "M. F."
+            },
+            {
+                "family": "Holt",
+                "given": "R. D."
+            },
+            {
+                "family": "Shurin",
+                "given": "J. B."
+            },
+            {
+                "family": "Law",
+                "given": "R."
+            },
+            {
+                "family": "Tilman",
+                "given": "D."
+            },
+            {
+                "family": "Loreau",
+                "given": "M."
+            },
+            {
+                "family": "Gonzalez",
+                "given": "A."
+            }
+        ],
+        "container-title": "Ecology Letters",
+        "id": "Leibold2004MetCon",
+        "issue": "7",
+        "issued": {
+            "date-parts": [
+                [
+                    2004
+                ]
+            ]
+        },
+        "keyword": "Mass effects,metacommunity,neutral model,patch dynamics,species sorting",
+        "page": "601-613",
+        "title": "The metacommunity concept: A framework for multi-scale community ecology",
+        "type": "article-journal",
+        "volume": "7"
+    },
+    {
+        "DOI": "10.2307/1941447",
+        "author": [
+            {
+                "family": "Levin",
+                "given": "Simon A."
+            }
+        ],
+        "container-title": "Ecology",
+        "id": "Levin1992ProPat",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    1992
+                ]
+            ]
+        },
+        "page": "1943-1967",
+        "title": "The Problem of Pattern and Scale in Ecology: The Robert H. MacArthur Award Lecture",
+        "type": "article-journal",
+        "volume": "73"
+    },
+    {
+        "author": [
+            {
+                "family": "Levins",
+                "given": "Richard"
+            },
+            {
+                "family": "Lewontin",
+                "given": "Richard Charles"
+            }
+        ],
+        "id": "Levins1987DiaBio",
+        "issued": {
+            "date-parts": [
+                [
+                    1987
+                ]
+            ]
+        },
+        "publisher": "Harvard University Press",
+        "publisher-place": "Cambridge, Mass.",
+        "title": "The Dialectical Biologist",
+        "type": "book"
+    },
+    {
+        "DOI": "10.1002/ecm.1359",
+        "author": [
+            {
+                "family": "Pennekamp",
+                "given": "Frank"
+            },
+            {
+                "family": "Iles",
+                "given": "Alison C."
+            },
+            {
+                "family": "Garland",
+                "given": "Joshua"
+            },
+            {
+                "family": "Brennan",
+                "given": "Georgina"
+            },
+            {
+                "family": "Brose",
+                "given": "Ulrich"
+            },
+            {
+                "family": "Gaedke",
+                "given": "Ursula"
+            },
+            {
+                "family": "Jacob",
+                "given": "Ute"
+            },
+            {
+                "family": "Kratina",
+                "given": "Pavel"
+            },
+            {
+                "family": "Matthews",
+                "given": "Blake"
+            },
+            {
+                "family": "Munch",
+                "given": "Stephan"
+            },
+            {
+                "family": "Novak",
+                "given": "Mark"
+            },
+            {
+                "family": "Palamara",
+                "given": "Gian Marco"
+            },
+            {
+                "family": "Rall",
+                "given": "Bj\u00f6rn C."
+            },
+            {
+                "family": "Rosenbaum",
+                "given": "Benjamin"
+            },
+            {
+                "family": "Tabi",
+                "given": "Andrea"
+            },
+            {
+                "family": "Ward",
+                "given": "Colette"
+            },
+            {
+                "family": "Williams",
+                "given": "Richard"
+            },
+            {
+                "family": "Ye",
+                "given": "Hao"
+            },
+            {
+                "family": "Petchey",
+                "given": "Owen L."
+            }
+        ],
+        "container-title": "Ecological Monographs",
+        "id": "Pennekamp2019IntPre",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2019
+                ]
+            ]
+        },
+        "keyword": "empirical dynamic modelling,forecasting,information theory,permutation entropy,population dynamics,time series analysis",
+        "page": "e01359",
+        "title": "The intrinsic predictability of ecological time series and its potential to guide forecasting",
+        "type": "article-journal",
+        "volume": "89"
+    },
+    {
+        "DOI": "10.1111/oik.01719",
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            },
+            {
+                "family": "Stouffer",
+                "given": "Daniel B."
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "container-title": "Oikos",
+        "id": "Poisot2015SpeWhy",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2015
+                ]
+            ]
+        },
+        "page": "243-251",
+        "title": "Beyond species: Why ecological interaction networks vary through space and time",
+        "type": "article-journal",
+        "volume": "124"
+    },
+    {
+        "URL": "http://arxiv.org/abs/2001.04385",
+        "author": [
+            {
+                "family": "Rackauckas",
+                "given": "Christopher"
+            },
+            {
+                "family": "Ma",
+                "given": "Yingbo"
+            },
+            {
+                "family": "Martensen",
+                "given": "Julius"
+            },
+            {
+                "family": "Warner",
+                "given": "Collin"
+            },
+            {
+                "family": "Zubov",
+                "given": "Kirill"
+            },
+            {
+                "family": "Supekar",
+                "given": "Rohit"
+            },
+            {
+                "family": "Skinner",
+                "given": "Dominic"
+            },
+            {
+                "family": "Ramadhan",
+                "given": "Ali"
+            },
+            {
+                "family": "Edelman",
+                "given": "Alan"
+            }
+        ],
+        "container-title": "arXiv:2001.04385 [cs, math, q-bio, stat]",
+        "id": "Rackauckas2020UniDif",
+        "issued": {
+            "date-parts": [
+                [
+                    2020,
+                    8
+                ]
+            ]
+        },
+        "keyword": "Computer Science - Machine Learning,Mathematics - Dynamical Systems,Quantitative Biology - Quantitative Methods,Statistics - Machine Learning",
+        "title": "Universal Differential Equations for Scientific Machine Learning",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1086/652373",
+        "author": [
+            {
+                "family": "Vellend",
+                "given": "Mark"
+            }
+        ],
+        "container-title": "The Quarterly Review of Biology",
+        "id": "Vellend2010ConSyn",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2010,
+                    6
+                ]
+            ]
+        },
+        "page": "183-206",
+        "title": "Conceptual Synthesis in Community Ecology",
+        "type": "article-journal",
+        "volume": "85"
+    }
+]

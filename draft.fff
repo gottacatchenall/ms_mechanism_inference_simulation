@@ -1,0 +1,36 @@
+\begin{figure}
+\hypertarget{fig:slices}{%
+\centering
+\includegraphics{./figures/tensorslices.png}
+\caption{Conceptual space with three axes.}\label{fig:slices}
+}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\hypertarget{fig:flow}{%
+\centering
+\includegraphics{./figures/flows.png}
+\caption{A mechanism is a flow on the state space.}\label{fig:flow}
+}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\hypertarget{fig:information}{%
+\centering
+\includegraphics{./figures/likelihoodfreeinference.png}
+\caption{Likelihood free inference for metacommunity
+ecology}\label{fig:information}
+}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\hypertarget{fig:abcfit}{%
+\centering
+\includegraphics{./figures/abcfit.png}
+\caption{here's the fit as of now for individual
+species}\label{fig:abcfit}
+}
+\end{figure}

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Using simulation models to infer ecological mechanisms</title>
+    <script src="https://hypothes.is/embed.js" async></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+        :root {
+            --citation: #1976D2;
+            --structure: hsl(210, 61%, 43%);
+
+            --light: #474747;
+            --pale: #a5a5a5;
+            --grey: #e0e0e0;
+            --nav: #fdfdfd;
+
+            --width: 650px;
+            --inner-space: 1.2em;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0 0;
+            padding: 0 0;
+        }
+
+        article > p {
+            line-height: 1.5em;
+            padding: 10px 0px;
+            font-size: 1.1em;
+            margin: 0px auto;
+        }
+        article > h1 {
+            padding-top: 3em;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+            border-bottom: 1px solid var(--structure);
+        }
+        a:hover {
+            font-weight: 500;
+        }
+        .citation {
+            color: var(--citation);
+        }
+        .container {
+            margin: 0em auto;
+            padding: var(--inner-space);
+        }
+        header > .container {
+            margin-top: 4em;
+        }
+        code, pre {
+            font-family: "Roboto Mono", monospace;
+        }
+        pre {
+            white-space: pre-wrap;
+        }
+
+        .header--title {
+            font-weight: 600;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .header--authors > span {
+            color: var(--light);
+            font-weight: 400;
+        }
+        main {
+            padding-bottom: 8em !important;
+        }
+        footer {
+            background-color: var(--grey);
+            font-weight: 300;
+        }
+
+
+
+        /* max width stuff here */
+        .abstract {
+            color: var(--light);
+            margin: 0em auto 5em;
+            max-width: 700px;
+        }
+        figure {
+            max-width: 1200px;
+            border: 1px solid var(--pale);
+            border-radius: 2px;
+            margin: 30px auto;
+        }
+        header {
+            font-family: "Roboto", sans-serif;
+            z-index: 5;
+            color: black;
+            margin: 4rem auto 0rem auto;
+            max-width: 700px;
+        }
+        article p{
+            max-width: 700px;
+        }
+        h1, h2, h3 {
+            margin: 10px auto;
+            color: var(--structure);
+            font-family: "Roboto", sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            max-width: 700px;
+        }
+        blockquote {
+            font-style: italic;
+            margin: 1rem auto;
+            font-size: 1.2em;
+            max-width: 500px;
+        }
+        #refs {
+            font-size: 90%;
+            column-count: 1;
+            max-width: 700px;
+            margin: 0px auto;
+        }
+        #refs > .csl-entry {
+            padding-bottom: 0.2em;
+            padding-top: 0.4em;
+            max-width: 500px;
+        }
+
+
+        img {
+            max-width: 100%;
+            display: block;
+            margin: 0em auto;
+        }
+        figure > figcaption {
+            padding: var(--inner-space);
+        }
+        table {
+            width: 100%;
+            min-width: 100%;
+            border-collapse: collapse;
+        }
+        table > caption {
+            padding: var(--inner-space);
+        }
+        figcaption, caption {
+            color: var(--light);
+            font-weight: 300;
+        }
+        thead {
+            color: var(--structure);
+        }
+        td, th {
+            padding: 3px;
+        }
+        tr {
+            border-top: 1px solid var(--structure);
+            border-bottom: 1px solid var(--structure);
+        }
+        tbody > tr:nth-child(even) {background: var(--grey)};
+        tbody {
+            border-bottom: 1px solid var(--structure);
+        }
+
+
+        .hanging-indent > .csl-entry {
+            padding-left: 50px ;
+            text-indent: -45px ;
+        }
+
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+        h3 {
+            font-size: 1.8em;
+        }
+        h4 {
+            font-size: 1.5em;
+        }    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css"
+    integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js"
+    integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O"
+    crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-yACMu8JWxKzSp/C1YV86pzGiQ/l1YUfE8oPuahJQxzehAjEt2GiQuy/BIvl9KyeF"
+    crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+            <div class="header--title">Using simulation models to infer ecological mechanisms</div>
+            <div class="header--authors">
+                                <span class="header--author">
+                                        <a href="https://orcid.org/0000-0002-6506-6487" target="_blank">
+                        M.D. Catchen
+                    </a>
+                                                                <sup class="affilcode">1</sup>
+                                            <sup class="affilcode">2</sup>
+                                    </span>
+                        </div>
+    </header>
+
+    <main class="container">
+        <section class="abstract">
+            <b>Abstract:</b> ch1 of my dissertation in paper form<br />
+            <div class="artifacts">
+                <a href="draft.pdf" title="Draft PDF" target="_blank">draft</a>
+                <a href="preprint.pdf" title="Preprint PDF" target="_blank">preprint</a>
+            </div>
+        </section>
+
+        <article>
+            <h1 id="introduction">Introduction</h1>
+            <p>Earth’s ecosystems are immensely variable—they are the emergent result of biological processes that exist across spatial, temporal, and organizational scales <span class="citation" data-cites="Levin1992ProPat">(Levin 1992)</span>. These processes enable, influence and compound on one another, resulting in the immense diversity of functions and forms of life on Earth. There has been a longstanding debate if there is any <em>generality</em>, or better <em>universality</em>, to these processes <span class="citation" data-cites="Lawton1999">(<strong>Lawton1999?</strong>)</span>. Answering this question, even in abstract, proves difficult. How can we determine if there is some set of universal rules or mechanisms that underlie systems driven by many factors which interact in nonlinear and probabilistic ways across separate organizational scales? We propose that this problem can be split into two parts: 1) deciding on the best spatial, temporal, and organizational scale at which to model an ecosystem process, and 2) after a particular scale has been chosen, determining the best model at that scale and associated parameters that explain a particular dataset.</p>
+            <p>The first question is to determine the proper scale to model a given system. Innumerable biological mechanisms have been posited at various spatial, temporal, and organizational scales (fig. 1). How does one decide the best scale at which to model a processes, or at what scale it is best to look for universality?</p>
+            <p><span class="citation" data-cites="LevinsLewontin">(<strong>LevinsLewontin?</strong>)</span> write</p>
+            <blockquote>
+            <p>The problem for science is to understand the proper domain of explanation of each abstraction rather than become its prisoner.</p>
+            </blockquote>
+            <p>The second question is, after a given scale is selected, to select the best model from a set of competing models at that scale. This question is primarily implicated with prediction—that is, what model best predicts ecological systems at a particular scale? This has applied need as forecasting is an imperative in ecology. Some scales are more predictable than others.</p>
+            <figure>
+            <img src="./figures/tensorslices.png" id="fig:slices" alt="Figure 1: Conceptual space with three axes." /><figcaption aria-hidden="true">Figure 1: Conceptual space with three axes.</figcaption>
+            </figure>
+            <p><span class="citation" data-cites="Lawton1999">(<strong>Lawton1999?</strong>)</span> argues that as an organizational scale, the ecology community is frought with too many “contingencies” in order to find universality. Partially in response to Lawton’s paper, the metacommunity framework <span class="citation" data-cites="Leibold2003MetCom">(<strong>Leibold2003MetCom?</strong>)</span> sought to address the inherently spatial nature of metacommunity processes. <span class="citation" data-cites="Vellend2010ConSyn">Vellend (2010)</span> posits four fundamental processes, analogous to evolutionary genetics. <span class="citation" data-cites="Poisot2015BeySpe">(<strong>Poisot2015BeySpe?</strong>)</span> also notes the importance of variation in traits and abundance. Necessary additional spatial and temporal dimension to community processes. The scales at which we propose mechanisms are subject to selection bias based on the data we can collect—looking for lost keys where the light is better.</p>
+            <p>The data we collect from ecological systems is inherently noisy. This data contains information produced by a combination of the amalgamation of “true” ecological and evolutionary mechanisms (interacting in unknown ways) compounded by sampling biases.</p>
+            <p>What is in this paper? We argue that advances in computational resources and methods for likelihood-free inference put us in the place where simulation models can enable us to test more complex interaction mechanisms <span class="citation" data-cites="Cranmer2020FroSim">(Cranmer, Brehmer, and Louppe 2020)</span>. We present a conceptual framework for determining the best model from a set of competing simulation models. We then present an example where we fit data from LTER wisconsin fish to both individual-species level and community level simulation models to determine which provides better predictions about occupancy over time. ScientificML <span class="citation" data-cites="Rackauckas2020UniDif">(Rackauckas et al. 2020)</span>.</p>
+            <h1 id="a-state-space-perspective-on-ecological-mechanisms">A state-space perspective on ecological mechanisms</h1>
+            <p>In order to present the conceptual framework for simulation-based inference, we first need to propose some definitions. This conceptual framework is based around consider the <em>dynamics</em> of a metacommunity system by considering the <em>geometry</em> of how that system changes in <em>state-space</em>.</p>
+            <p>Dynamical systems is the subfield of mathematics related to systems that change over time. Often by applying a geometric perspective to state-space. What is state space?</p>
+            <p><strong><em>What is an ecological mechanism?</em></strong> A mechanism describes how the state of a system changes from one timestep to the next.<br />
+            A mapping between low dimensional latent/parameter space and information space.</p>
+            <p>Why is simulation necessary in ecology? They allow us to produce data that encodes explicit mechanism <span class="citation" data-cites="Crutchfield1992SemThe">(Crutchfield 1992)</span>.</p>
+            <p><strong><em>Metacommunity states and mechanisms</em></strong> Within this abstraction, a metacommunity state is a set of measurements for species across locations at a single point in time, which can be represented as a matrix: a grid of measurements where each row corresponds to location and each column to species.</p>
+            <p><strong><em>Metacommunity dynamics and tensors</em></strong> Across timepoints, a set of states form trajectories which can be represented as a a tensor.</p>
+            <figure>
+            <img src="./figures/flows.png" id="fig:flow" alt="Figure 2: A mechanism is a flow on the state space." /><figcaption aria-hidden="true">Figure 2: A mechanism is a flow on the state space.</figcaption>
+            </figure>
+            <h1 id="using-simulation-to-infer-mechanisms-in-ecology">Using simulation to infer mechanisms in ecology</h1>
+            <p>Simulation models have a long history in ecology. cite some examples.</p>
+            <p>Still, fitting simulation models to data is difficult. ^what does this mean to someone who doesn’t know what fitting means</p>
+            <p>No likelihood function. General problem of high-dimensional model, compounded by little data.</p>
+            <p>What is enabling this now? computational capacity and methods for optimization parameter estimation. More data.</p>
+            <figure>
+            <img src="./figures/likelihoodfreeinference.png" id="fig:information" alt="Figure 3: Likelihood free inference for metacommunity ecology" /><figcaption aria-hidden="true">Figure 3: Likelihood free inference for metacommunity ecology</figcaption>
+            </figure>
+            <h1 id="case-study-species-versus-community-level-occupancy-models">Case study: species versus community level occupancy models</h1>
+            <p>In this section we use data from LTER Minnesota lakes for five fish species. We look at the occupancy dynamics of five species (list species) across NS sites for each year from 198something-200something. We fit two simulation models via likelihood-free inference: first where each species exhibit independent occupancy dynamics, and second where each species has the same <span class="math inline"><em>c</em></span> and <span class="math inline"><em>e</em></span> value.</p>
+            <p><strong><em>Independent Species Model</em></strong> We simulate dynamics where each species <span class="math inline"><em>i</em></span> has a colonization probability <span class="math inline"><em>c</em><sub><em>i</em></sub></span> and an extinction probability <span class="math inline"><em>e</em><sub><em>i</em></sub></span>. These are assumed to be a fixed value for each species which does not vary over time.</p>
+            <p><strong><em>Unified Model</em></strong> The colonization for each species <span class="math inline"><em>i</em></span> is <span class="math inline"><em>c</em></span>, extinction probability is <span class="math inline"><em>e</em></span>.</p>
+            <figure>
+            <img src="./figures/abcfit.png" id="fig:abcfit" alt="Figure 4: here’s the fit as of now for individual species" /><figcaption aria-hidden="true">Figure 4: here’s the fit as of now for individual species</figcaption>
+            </figure>
+            <p><strong><em>Results figure</em></strong> Panel A: AUC-ROC for single species prediction Panel B: AUC-ROC for unified prediction Panel C: Mean error for proportion occupancy for each model.</p>
+            <p><strong><em>Assessing fit</em></strong></p>
+            <p>Test it on simulated data to see if it works. <img src="./figures/comparedtotruth.png" id="fig:pseudodata" alt="TODO" /></p>
+            <p><strong><em>We need to talk about summary statistics</em></strong></p>
+            <p>Is proportion more “predictable” than individual occupancy?</p>
+            <p>Which ones make effective predictions? What models do we use to fit empirical data to simulated (generative adversarial networks, MCMC-ABC methods, etc.)</p>
+            <p>Caveats on more complex models for this simple example. Refer to up-to-date resources on model fitting an assessment.</p>
+            <h1 id="predictive-ecology-as-a-scientific-epistemology">Predictive ecology as a scientific epistemology</h1>
+            <p>What scales are inherently more predictable.</p>
+            <p>Here we propose that simulation models have the potential to infer This results in the question: what are the mechanisms best describe a set of data?</p>
+            <p>Science is fundamentally a theory of epistemology: a methodology and set of principles to make justified claims about the world. Descriptive claims about the world (the Earth goes around the sun, more species are found near the equator than far from it) are considered justified if they make predictions that agree with observed reality.</p>
+            <blockquote>
+            <p>The sciences do not try to explain, they hardly even try to interpret, they mainly make models. By a model is meant a mathematical construct which, with the addition of certain verbal interpretations, describes observed phenomena. The justification of such a mathematical construct is solely and precisely that it is expected to work - that is correctly to describe phenomena from a reasonably wide area. Furthermore, it must satisfy certain esthetic criteria - that is, in relation to how much it describes, it must be rather simple.</p>
+            <p>John Von Neumann</p>
+            </blockquote>
+            <blockquote>
+            <p>The electron is a theory we use; it is so useful in understanding the way nature works that we can almost call it real.</p>
+            <p>Richard P. Feynman</p>
+            </blockquote>
+            <p>The whole idea of searching for “laws” (Lawton) rests on an assumption that there are universal</p>
+            <p>All models are wrong is not just about statistical models.</p>
+            <p>In order to determine if a descriptive claim agrees with reality, it must be translated into a quantitative model that makes predictions about things that can be measured. These quantitative models take many forms. A subclass of these models, mechanistic models, represent latent processes that can not be observed or measured, either inherently or due to technological limitations.</p>
+            <p>Different levels of conceptual abstraction have proven successful in predicting how biological systems change over time.</p>
+            <p>Still, predicting how ecosystems will change in the future remains a fundamental goal of ecology.</p>
+            <p>There is variation in the what scales are best for prediction <span class="citation" data-cites="Brodie2021ExpTim">(Brodie et al. 2021)</span>, and some forms of dynamics are intrinsically complex enough to avoid effective prediction at all <span class="citation" data-cites="Pennekamp2019IntPre Beckage2011LimPre Chen2019RevCom">(Pennekamp et al. 2019; Beckage, Gross, and Kauffman 2011; Chen, Angulo, and Liu 2019)</span>.</p>
+            <h1 id="conclusion">Conclusion</h1>
+            <p>What does is mean for a model to be correct? Take the logistic model, for example. Although logistic growth is observed in many model and to some degree non-model systems, it is hard to say there is some intrinsic truth to this–i.e. that logistic growth is an ecoloigical “law.” The phenomena of population dynamics are the result of individual organisms being born, reproducing, and dying at a lower level of organization, but the logistic model is a useful abstraction under some circumstances.</p>
+            <p>It is useful the notion that a model represents some “truth” about the world, instead models have vary in their usefulness. predictive accuracy is one measure of this usefulness. The problem is you cannot tell the difference —Hume and the induction problem.</p>
+            <p>If a simulation makes data the looks like real data, does it represent the “true” world? Does it matter? Newtonian Gravity was “right,” until GR was more right. Different models at different levels of abstract provide varying levels of predictive accuracy. Mechanisms that are incorrect that produce information that shares statistical properties with empirical data can still be useful.</p>
+            <p><strong><em>What are the limitations of the utility of mechanistic simulations</em></strong> There are limits to the scope of simulation models. How do we know when they are appropriate, versus a ML/non-mechanistic model? Need for flexible set of tools to do this, setting up the next chapter.</p>
+            <h1 class="unnumbered" id="references">References</h1>
+            <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+            <div id="ref-Beckage2011LimPre" class="csl-entry" role="doc-biblioentry">
+            Beckage, Brian, Louis J. Gross, and Stuart Kauffman. 2011. <span>“The Limits to Prediction in Ecological Systems.”</span> <em>Ecosphere</em> 2 (11): art125. <a href="https://doi.org/10.1890/ES11-00211.1">https://doi.org/10.1890/ES11-00211.1</a>.
+            </div>
+            <div id="ref-Brodie2021ExpTim" class="csl-entry" role="doc-biblioentry">
+            Brodie, Stephanie, Briana Abrahms, Steven J. Bograd, Gemma Carroll, Elliott L. Hazen, Barbara A. Muhling, Mercedes Pozo Buil, James A. Smith, Heather Welch, and Michael G. Jacox. 2021. <span>“Exploring Timescales of Predictability in Species Distributions.”</span> <em>Ecography</em> 44 (6): 832–44. <a href="https://doi.org/10.1111/ecog.05504">https://doi.org/10.1111/ecog.05504</a>.
+            </div>
+            <div id="ref-Chen2019RevCom" class="csl-entry" role="doc-biblioentry">
+            Chen, Yize, Marco Tulio Angulo, and Yang-Yu Liu. 2019. <span>“Revealing Complex Ecological Dynamics via Symbolic Regression.”</span> <em>BioEssays</em> 41 (12): 1900069. <a href="https://doi.org/10.1002/bies.201900069">https://doi.org/10.1002/bies.201900069</a>.
+            </div>
+            <div id="ref-Cranmer2020FroSim" class="csl-entry" role="doc-biblioentry">
+            Cranmer, Kyle, Johann Brehmer, and Gilles Louppe. 2020. <span>“The Frontier of Simulation-Based Inference.”</span> <em>Proceedings of the National Academy of Sciences</em> 117 (48): 30055–62.
+            </div>
+            <div id="ref-Crutchfield1992SemThe" class="csl-entry" role="doc-biblioentry">
+            Crutchfield, James P. 1992. <span>“Semantics and Thermodynamics,”</span> 38.
+            </div>
+            <div id="ref-Levin1992ProPat" class="csl-entry" role="doc-biblioentry">
+            Levin, Simon A. 1992. <span>“The Problem of Pattern and Scale in Ecology: The Robert H. MacArthur Award Lecture.”</span> <em>Ecology</em> 73 (6): 1943–67. <a href="https://doi.org/10.2307/1941447">https://doi.org/10.2307/1941447</a>.
+            </div>
+            <div id="ref-Pennekamp2019IntPre" class="csl-entry" role="doc-biblioentry">
+            Pennekamp, Frank, Alison C. Iles, Joshua Garland, Georgina Brennan, Ulrich Brose, Ursula Gaedke, Ute Jacob, et al. 2019. <span>“The Intrinsic Predictability of Ecological Time Series and Its Potential to Guide Forecasting.”</span> <em>Ecological Monographs</em> 89 (2): e01359. <a href="https://doi.org/10.1002/ecm.1359">https://doi.org/10.1002/ecm.1359</a>.
+            </div>
+            <div id="ref-Rackauckas2020UniDif" class="csl-entry" role="doc-biblioentry">
+            Rackauckas, Christopher, Yingbo Ma, Julius Martensen, Collin Warner, Kirill Zubov, Rohit Supekar, Dominic Skinner, Ali Ramadhan, and Alan Edelman. 2020. <span>“Universal Differential Equations for Scientific Machine Learning.”</span> <em>arXiv:2001.04385 [cs, Math, q-Bio, Stat]</em>, August. <a href="http://arxiv.org/abs/2001.04385">http://arxiv.org/abs/2001.04385</a>.
+            </div>
+            <div id="ref-Vellend2010ConSyn" class="csl-entry" role="doc-biblioentry">
+            Vellend, Mark. 2010. <span>“Conceptual Synthesis in Community Ecology.”</span> <em>The Quarterly Review of Biology</em> 85 (2): 183–206. <a href="https://doi.org/10.1086/652373">https://doi.org/10.1086/652373</a>.
+            </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2>Affiliations</h2>
+            <sup>1</sup>&nbsp;McGill University; <sup>2</sup>&nbsp;Québec Centre for Biodiversity Sciences
+            <br />
+            
+        </div>
+    </footer>
+
+</body>
+</html>
