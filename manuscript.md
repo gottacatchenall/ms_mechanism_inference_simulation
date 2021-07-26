@@ -41,10 +41,16 @@ Some scales are more predictable than others.
 ![Conceptual space with three axes.](./figures/tensorslices.png){#fig:slices}
 
 
-@Lawton1999 argues that as an organizational scale, the ecology
-community is frought with too many "contingencies" in order to find
-universality. Partially in response to Lawton's paper, the metacommunity
-framework [@Leibold2003MetCom] sought to address the inherently spatial nature
+@Lawton1999 argues that as an organizational scale, the ecological
+community is frought with too many "contingencies" to find
+universality. **TODO -- more details on the variability of processes in community ecology***
+
+
+
+Partially in response to Lawton's paper, many conceputal
+frameworks have been proposed to incorporate processes across multiple scales.
+
+The metacommunity framework [@Leibold2003MetCom] sought to address the inherently spatial nature
 of metacommunity processes. @Vellend2010ConSyn posits four fundamental
 processes, analogous to evolutionary genetics. @Poisot2015BeySpe also notes the
 importance of variation in traits and abundance.  Necessary additional spatial
@@ -59,13 +65,16 @@ ecological and evolutionary mechanisms (interacting in unknown ways) compounded
 by sampling biases.
 
 What is in this paper? We argue that advances in computational resources and
-methods for likelihood-free inference put us in the place where simulation
+methods for likelihood-free inference put us in the place where generative
 models can enable us to test more complex interaction mechanisms [@Cranmer2020FroSim]. We
 present a conceptual framework for determining the best model from a set of
 competing simulation models. We then present an example where we fit data from
-LTER wisconsin fish to both individual-species level and community level
-simulation models to determine which provides better predictions about occupancy
-over time. ScientificML [@Rackauckas2020UniDif].
+empirical food webs from Mangal [@cite] to various generative models of
+food-web structure. We then infer parameters via ABC. Then we apply generative
+models to test set to see which makes best predictions about interactions.
+
+
+ ScientificML [@Rackauckas2020UniDif].
 
 
 # A state-space perspective on ecological mechanisms
@@ -118,34 +127,6 @@ parameter estimation. More data.
 
 ![Likelihood free inference for metacommunity ecology ](./figures/likelihoodfreeinference.png){#fig:information}
 
-
-# Case study: species versus community level occupancy models
-
-In this section we use data from LTER Minnesota lakes for five fish species. We
-look at the occupancy dynamics of five species (list species) across NS sites
-for each year from 198something-200something. We fit two simulation models via
-likelihood-free inference: first where each species exhibit independent
-occupancy dynamics, and second where each species has the same $c$ and $e$ value.
-
-***Independent Species Model***
-We simulate dynamics where each species $i$ has a colonization probability $c_i$
-and an extinction probability $e_i$. These are assumed to be a fixed value for
-each species which does not vary over time.
-
-***Unified Model***
-The colonization for each species $i$ is $c$, extinction probability is $e$.
-
-![here's the fit as of now for individual species](./figures/abcfit.png){#fig:abcfit}
-
-***Results figure***
-Panel A: AUC-ROC for single species prediction
-Panel B: AUC-ROC for unified prediction
-Panel C: Mean error for proportion occupancy for each model.
-
-***Assessing fit***
-
-Test it on simulated data to see if it works.
-![TODO](./figures/comparedtotruth.png){#fig:pseudodata}
 
 
 ***We need to talk about summary statistics***

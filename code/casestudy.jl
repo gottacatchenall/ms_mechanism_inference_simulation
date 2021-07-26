@@ -6,11 +6,12 @@ using Distributions
 using ProgressMeter
 
 const specieslist = ["LARGEMOUTHBASS", "SMALLMOUTHBASS", "YELLOWPERCH", "PUMPKINSEED"]
+const lakeslist = ["WEST LONG", "PAUL", "EAST LONG", "PETER"]
 
 function read_data(; filename = "LTERwisconsinfish.csv")
     justfish = CSV.read(joinpath(".", filename), DataFrame)
     species = specieslist
-    lakes = unique(justfish[!,:lakename])
+    lakes = lakeslist
     years = unique(justfish[!, :year4])
 
     tensor = zeros((length(species), length(lakes), length(years)))
@@ -37,9 +38,9 @@ function read_data(; filename = "LTERwisconsinfish.csv")
 end
 
 
-function plot_meanoccupancy(df)
+function plot_meanoccupancy_by_species(df, tensor)
     species = specieslist;
-    lakes = unique(df[!,:lakename])
+    lakes = lakeslist
     years = unique(df[!, :year4])
     plotsvec = []
     for s in 1:length(species)
@@ -56,6 +57,25 @@ function plot_meanoccupancy(df)
     plot(plotsvec...,) 
 end
 
+
+function plot_meanoccupancy_by_lake(df, tensor)
+    species = specieslist;
+    lakes = lakeslist;
+    years = unique(df[!,:year4])
+    plotsvec = []
+    for l in 1:length(lakes)
+        plt = plot(legend=:none, frame=:box, title="$(lakes[l])")
+
+        mns = [mean(tensor[:,l,i]) for i in 1:length(years)]
+
+        df = sort(DataFrame(years=years,mns=mns), [:years])
+        scatter!(plt, df.years,df.mns, ma=0.5)
+
+        plot!(plt, df.years,df.mns, lc=:dodgerblue)
+        push!(plotsvec, plt)
+    end
+    plot(plotsvec...,) 
+end
 
 
 # now lets set up two generative models:
