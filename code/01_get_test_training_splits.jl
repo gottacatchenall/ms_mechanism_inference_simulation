@@ -1,5 +1,6 @@
 using DataFrames, CSV
 using Random: shuffle!
+using EcologicalNetworks
 
 function read_edgelist(filepath)
     df = CSV.read(filepath, DataFrame)
@@ -13,7 +14,7 @@ function read_edgelist(filepath)
         j = df[r, :j]
         A[i,j] = 1
     end
-    return A
+    return UnipartiteNetwork(Bool.(A))
 end
 
 

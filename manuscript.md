@@ -77,42 +77,7 @@ models to test set to see which makes best predictions about interactions.
  ScientificML [@Rackauckas2020UniDif].
 
 
-# A state-space perspective on ecological mechanisms
-
-In order to present the conceptual framework for simulation-based inference,
-we first need to propose some definitions. This conceptual framework
-is based around consider the _dynamics_ of a metacommunity system by considering
-the _geometry_ of how that system changes in _state-space_.
-
-
-Dynamical systems is the subfield of mathematics related to systems that change
-over time.
-Often by applying a geometric perspective to state-space.
-What is state space?
-
-***What is an ecological mechanism?***
-A mechanism describes how the state of a system changes from one timestep to
-the next.  
-A mapping between low dimensional latent/parameter space and information space.
-
-Why is simulation necessary in ecology? They allow us to produce data that
-encodes explicit mechanism [@Crutchfield1992SemThe].
-
-***Metacommunity states and mechanisms***
-Within this abstraction, a metacommunity state is a set of measurements for
-species across locations at a single point in time, which can be represented as
-a matrix: a grid of measurements where each row corresponds to location and each
-column to species.
-
-***Metacommunity dynamics and tensors***
-Across timepoints, a set of states form trajectories which can
-be represented as a a tensor.
-
-![A mechanism is a flow on the state space.](./figures/flows.png){#fig:flow}
-
-
-
-# Using simulation to infer mechanisms in ecology
+# Using simulation models for ecological inference
 
 Simulation models have a long history in ecology. cite some examples.
 
@@ -128,6 +93,7 @@ parameter estimation. More data.
 ![Likelihood free inference for metacommunity ecology ](./figures/likelihoodfreeinference.png){#fig:information}
 
 
+# Case study: predicting ecological networks using generative learning
 
 ***We need to talk about summary statistics***
 
@@ -135,7 +101,6 @@ Is proportion more "predictable" than individual occupancy?
 
 Which ones make effective predictions? What models do we use to fit empirical
 data to simulated (generative adversarial networks, MCMC-ABC methods, etc.)
-
 Caveats on more complex models for this simple example.
 Refer to up-to-date resources on model fitting an assessment.
 
@@ -222,6 +187,43 @@ that shares statistical properties with empirical data can still be useful.
 There are limits to the scope of simulation models. How do we know when they
 are appropriate, versus a ML/non-mechanistic model?
 Need for flexible set of tools to do this, setting up the next chapter.
+
+
+# old stuff
+
+**A state-space perspective on ecological mechanisms**
+
+In order to present the conceptual framework for simulation-based inference,
+we first need to propose some definitions. This conceptual framework
+is based around consider the _dynamics_ of a metacommunity system by considering
+the _geometry_ of how that system changes in _state-space_.
+
+
+Dynamical systems is the subfield of mathematics related to systems that change
+over time.
+Often by applying a geometric perspective to state-space.
+What is state space?
+
+***What is an ecological mechanism?***
+A mechanism describes how the state of a system changes from one timestep to
+the next.  
+A mapping between low dimensional latent/parameter space and information space.
+
+Why is simulation necessary in ecology? They allow us to produce data that
+encodes explicit mechanism [@Crutchfield1992SemThe].
+
+***Metacommunity states and mechanisms***
+Within this abstraction, a metacommunity state is a set of measurements for
+species across locations at a single point in time, which can be represented as
+a matrix: a grid of measurements where each row corresponds to location and each
+column to species.
+
+***Metacommunity dynamics and tensors***
+Across timepoints, a set of states form trajectories which can
+be represented as a a tensor.
+
+![A mechanism is a flow on the state space.](./figures/flows.png){#fig:flow}
+
 
 
 
